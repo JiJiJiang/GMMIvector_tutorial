@@ -15,7 +15,15 @@
 
 ## 实验部分
 ### 创建自己的实验目录
-实验__完成__之后，完整的实验目录为：
+（苏州超算上）样例工程文件目录为：/mnt/lustre/sjtu/users/sw121/sid/tutorials/GMMIvec
+<p align="left"><img width="80%" src="picture/sample_project_directory.png" /></p>
+
+由于每个人只对自己的工作目录有写权限，所以为了能够修改run.sh，然后分stage依次执行，首先应该在自己的工作目录下新建工程目录，如MyGMMIvec,并将run.sh和local文件夹直接复制到工程目录下，然后将其余文件通过ln -s软链接到该目录下（除了data_plp,exp_plp,log和results,这四个文件将在后续分步执行过程中产生），若操作正确，工程目录如下：
+<p align="left"><img width="80%" src="picture/prepare_your_own_dir.png" /></p>
+
+
+
+实验 __完成__ 之后，完整的实验目录为：
 <p align="left"><img width="80%" src="picture/final_directory.png" /></p>
 
 
