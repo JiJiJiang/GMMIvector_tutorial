@@ -22,13 +22,16 @@
 <p align="left"><img width="80%" src="picture/prepare_your_own_dir.png" /></p>
 
 之后，分步执行run.sh中每个stage，run.sh中共有5个stage（stage0～stage3，加上最后一行"./PLDA.sh"其实是stage4）。先注释掉最后一行"./PLDA.sh":
-<p align="left"><img width="30%" src="picture/comment_PLDA.png" /></p>
+<p align="left"><img width="15%" src="picture/comment_PLDA.png" /></p>
+
+修改run.sh中stage的值为一个较大的值（如10）,并将你将要运行的stage中的if语句判断条件中的常数值修改为相同值（或更大）。以stage0为例：
+<p align="left"><img width="40%" src="picture/modify_stage.png" /></p>
+其实很容易理解，对于每个stage中的if语句中判断stage变量是否小于等于常数值，若是则执行该stage模块，否则不执行。
 
 
 
 ### stage 0
-修改run.sh中stage的值为一个较大的值，如10,并将你将要运行的stage中的if语句判断条件中的数值修改为相同值（或更大）
-<p align="left"><img width="50%" src="picture/modify_stage.png" /></p>
+
 
 
 ### stage 1
