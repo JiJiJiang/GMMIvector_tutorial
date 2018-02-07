@@ -26,11 +26,13 @@
 
 修改run.sh中stage的值为一个较大的值（如10）,并将你将要运行的stage中的if语句判断条件中的常数值修改为相同值（或更大）。以stage0为例：
 <p align="left"><img width="40%" src="picture/modify_stage.png" /></p>
-其实很容易理解，对于每个stage中的if语句中判断stage变量是否小于等于常数值，若是则执行该stage模块，否则不执行。
+
+ps: 这里其实很容易理解，对于每个stage中的if语句中判断stage变量是否小于等于常数值，若是则执行该stage阶段，否则不执行。
 
 
 
 ### stage 0
+首先利用上面方法修改stage值控制只运行该阶段。（后面stage1～3方法相同）
 
 
 
