@@ -122,5 +122,6 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 
 #### 实验步骤和结果
 
+### 实验总结
 实验 __完成__ 之后，完整的实验目录为：
 <p align="left"><img width="80%" src="picture/final_directory.png" /></p>
