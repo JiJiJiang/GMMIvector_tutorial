@@ -51,13 +51,18 @@ stage0中运行的其实就是local/make_rsr.sh脚本，该脚本的运行流程
 跑完之后，可以看到工程目录下生成了一个文件夹data_plp，目录结构如下：
 <p align="left"><img width="60%" src="picture/finish_stage0.png" /></p>
 
-简单介绍一下相关的文件作用：
-1. data_plp中生成了7个文件夹：
+可以看到data_plp中包含7个文件夹：
 > + 开发训练: train+trainplp
 > + 注册: enroll+enrollplp
 > + 测试: test+testplp
 > + log文件夹: 存储plp特征提取的输出log信息。
-2. 具体以train+trainplp为例，
+
+具体以train+trainplp为例：
+1. train:
+> + wav.scp
+> + spk2utt
+2. trainplp:
+
 
 
 
