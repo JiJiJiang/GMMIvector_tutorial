@@ -108,7 +108,7 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 
 #### 实验步骤和结果
 跑完之后，可以看到exp_plp目录下生成了文件夹extrain，将在最后的PLDA后端打分中使用。
-<p align="left"><img width="80%" src="picture/finish_stage3.png" /></p>
+<p align="left"><img width="60%" src="picture/finish_stage3.png" /></p>
 
 ### PLDA.sh（stage 4）
 #### 脚本解释
@@ -121,6 +121,11 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 <p align="left"><img width="80%" src="picture/compute-eer.png" /></p>
 
 #### 实验步骤和结果
+跑完之后，可以看到生成了results文件夹，包括单个子文件：
++ plda_score： plda给每个测试数据打分的结果。
++ plda_score_split： 根据注册和测试是否为同一个人得到每个score的标记（target or nontarget）
++ plda_result： 输出计算得到的EER（0.6089%）。
+<p align="left"><img width="60%" src="picture/finish_PLDA.png" /></p>
 
 ### 实验总结
 这个实验的基本流程图为：
