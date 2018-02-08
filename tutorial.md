@@ -109,11 +109,11 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 ### PLDA.sh（stage 4）
 #### 脚本解释
 直接调用kaldi工具包，分成三步：
-1. 训练PLDA模型，调用ivector-compute-plda即可，训练数据为开发集
+1. 训练PLDA模型，训练数据为开发集，调用ivector-compute-plda即可，用法为：
 <p align="left"><img width="80%" src="picture/ivector-compute-plda.png" /></p>
-2. 利用训练好的PLDA模型给评测集进行打分，test_ref为给定的标准测试集合
+2. 利用训练好的PLDA模型给评测集进行打分，test_ref为给定的标准测试集合,ivector-plda-scoring用法为：
 <p align="left"><img width="80%" src="picture/ivector-plda-scoring.png" /></p>
-3. 根据打分结果计算EER，并保存到输出文件
+3. 根据打分结果计算EER，并保存到输出文件，调用compute-eer即可：
 <p align="left"><img width="80%" src="picture/compute-eer.png" /></p>
 
 #### 实验步骤和结果
