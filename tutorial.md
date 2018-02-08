@@ -32,7 +32,18 @@ ps: 这里其实很容易理解，对于每个stage中的if语句中判断stage�
 
 
 ### stage 0
-首先利用上面方法修改stage值控制只运行该阶段。（后面stage1～3方法相同）
+首先利用上面方法修改stage值控制只运行该阶段。（后面stage1～3方法相同，亦不赘述）
+
+修改run.sh之后，提交到超算上运行，提交命令为：
+<p align="left"><img width="80%" src="picture/submit_task.png" /></p>
+
+这里注意两个点：
+1. 提交的是cpu队列，而不是gpu。
+2. 建议每个stage运行后输出的log分开保存。（不然前面的会被后面覆盖掉）
+
+跑完之后，可以看到工程目录下生成了一个文件夹，目录结构如下：
+<p align="left"><img width="70%" src="picture/finish_stage0.png" /></p>
+
 
 
 
