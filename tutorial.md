@@ -12,7 +12,7 @@
 
 语料库部分：
 + 采用RSR2015/part1数据集：共300个说话人（m157,f143），有30句不同的话，每句话每个人说9遍。<br />
-（训练集中m100f94,测试集中m57f49）
+（训练集中m100f94,评测集中m57f49：每个说话人说每句话的第1、4、7次作为注册集，剩余6次用作测试集）
 + 命名规则为 (f|m)XXX_YY_ZZZ.wav：表示性别为(f|m)的说话人XXX说第ZZZ句话的第YY遍的音频。<br />
 例如m001_02_020.wav：表示男性说话人001说第20句话的第2遍的音频。
 
@@ -108,7 +108,7 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 
 #### 实验步骤和结果
 跑完之后，可以看到exp_plp目录下生成了文件夹extrain，将在最后的PLDA后端打分中使用。
-<p align="left"><img width="60%" src="picture/finish_stage3.png" /></p>
+<p align="left"><img width="50%" src="picture/finish_stage3.png" /></p>
 
 ### PLDA.sh（stage 4）
 #### 脚本解释
@@ -128,5 +128,7 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 <p align="left"><img width="60%" src="picture/finish_PLDA.png" /></p>
 
 ### 实验总结
-这个实验的基本流程图为：
+整个实验的基本流程图为：
 <p align="left"><img width="80%" src="picture/GMMivector_framework.png" /></p>
+
+最终得到的EER只有0.6089%，这是因为数据集比较特殊的关系，并不能作为GMMIvector在文本相关的说话人确认任务中的一般性性能。
