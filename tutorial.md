@@ -96,16 +96,26 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 直接调用kaldi工具包，训练得到ivector提取器（实际上就是矩阵T）。<br />
 （40个并行任务，每个任务1个进程，每个进程1个线程，ivector维数为400，EM算法迭代5次，训练数据为开发集data_plp/train）
 <p align="left"><img width="80%" src="picture/train_ivector_extractor.png" /></p>
+
 #### 实验步骤和结果
 
 ### stage 3
 #### 脚本解释
 利用stage 2中训练得到的ivector提取器，将data_plp中train,enroll和test的数据（plp提取的13维特征数据）提取转化为对应的ivector数据，依次存放在exp_plp/extrain/ivectors_train,exp_plp/extrain/ivectors_enroll和exp_plp/extrain/ivectors_test中。
 <p align="left"><img width="80%" src="picture/extract_ivectors.png" /></p>
+
 #### 实验步骤和结果
 
 ### PLDA.sh（stage 4）
 #### 脚本解释
+直接调用kaldi工具包，分成三步：
+1. 训练PLDA模型，调用ivector-compute-plda即可，训练数据为开发集
+<p align="left"><img width="80%" src="picture/ivector-compute-plda.png" /></p>
+2. 利用训练好的PLDA模型给评测集进行打分，test_ref为给定的标准测试集合
+<p align="left"><img width="80%" src="picture/ivector-plda-scoring.png" /></p>
+3. 根据打分结果计算EER，并保存到输出文件
+<p align="left"><img width="80%" src="picture/compute-eer.png" /></p>
+
 #### 实验步骤和结果
 
 实验 __完成__ 之后，完整的实验目录为：
