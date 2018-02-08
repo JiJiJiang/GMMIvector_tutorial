@@ -79,8 +79,16 @@ stage0中运行的其实就是local/make_rsr.sh脚本，该脚本的运行流程
 
 ### stage 1
 #### 脚本解释
-
+调用kaldi工具包训练UBM，分成三步：
+1. 准备数据目录（传入开发集目录）
+2. 先训练一个协方差矩阵为对角矩阵的UBM（40个并行任务，8个线程，512个高斯）
+3. 在此基础上再训练一个协方差矩阵为全矩阵的UBM
 #### 实验步骤和结果
+同样需要先修改stage值控制只运行stage1，然后提交run.sh。
+
+跑完之后，同样可以看到工程目录下生成了一个文件夹exp_plp，目录结构如下：
+<p align="left"><img width="60%" src="picture/finish_stage1.png" /></p>
+
 
 实验 __完成__ 之后，完整的实验目录为：
 <p align="left"><img width="80%" src="picture/final_directory.png" /></p>
