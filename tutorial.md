@@ -89,6 +89,24 @@ stage0中运行的其实就是local/make_rsr.sh脚本，该脚本的运行流程
 跑完之后，同样可以看到工程目录下生成了一个文件夹exp_plp，目录结构如下：
 <p align="left"><img width="60%" src="picture/finish_stage1.png" /></p>
 
+exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
+
+### stage 2
+#### 脚本解释
+直接调用kaldi工具包，训练得到ivector提取器（实际上就是矩阵T）。<br />
+（40个并行任务，每个任务1个进程，每个进程1个线程，ivector维数为400，EM算法迭代5次，训练数据为开发集data_plp/train）
+<p align="left"><img width="80%" src="picture/train_ivector_extractor.png" /></p>
+#### 实验步骤和结果
+
+### stage 3
+#### 脚本解释
+利用stage 2中训练得到的ivector提取器，将data_plp中train,enroll和test的数据（plp提取的13维特征数据）提取转化为对应的ivector数据，依次存放在exp_plp/extrain/ivectors_train,exp_plp/extrain/ivectors_enroll和exp_plp/extrain/ivectors_test中。
+<p align="left"><img width="80%" src="picture/extract_ivectors.png" /></p>
+#### 实验步骤和结果
+
+### PLDA.sh（stage 4）
+#### 脚本解释
+#### 实验步骤和结果
 
 实验 __完成__ 之后，完整的实验目录为：
 <p align="left"><img width="80%" src="picture/final_directory.png" /></p>
