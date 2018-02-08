@@ -1,5 +1,4 @@
 # GMMIvector 教程
-
 ## 开始之前
 实验涉及到的理论部分大致有：
 + 数据准备：plp提取特征。
@@ -11,8 +10,6 @@
 （如引入了stage变量控制分步执行）是自己实现。
 
 掌握以上知识，对理解数据格式和脚本代码有很大帮助。
-
-
 ## 实验部分
 ### 创建自己的实验目录
 （苏州超算上）样例工程文件目录为：/mnt/lustre/sjtu/users/sw121/sid/tutorials/GMMIvec
@@ -29,9 +26,19 @@
 
 ps: 这里其实很容易理解，对于每个stage中的if语句中判断stage变量是否小于等于常数值，若是则执行该stage阶段，否则不执行。
 
-
-
+__接下来每个stage将分成“脚本解释”和“实验步骤和结果”两部分!__
 ### stage 0
+#### 脚本解释
+run.sh开头运行了两个.sh文件：
+1. . cmd.sh：确定作业的运行调度方式是“slurm.pl”。
+2. . path.sh：加入与kaldi相关的环境变量。
+
+stage0中运行的其实就是local/make_rsr.sh脚本，该脚本的运行流程大致是：
+1. 定义开发集，注册集和测试集目录
+2. 生成wav.scp, utt2spk, spk2utt（主要起到了文件位置的索引作用）
+3. 软链接vad.scp（音频有效性检测，主要用于区分语音和非语音部分）
+4. 调用kaldi工具中steps/make_plp.sh分别对开发集，注册集和测试集提取plp特征并分别存储在trainplp，enrollplp，testplp中。
+#### 实验步骤和结果
 首先利用上面方法修改stage值控制只运行该阶段。（后面stage1～3方法相同，亦不赘述）
 
 修改run.sh之后，提交到超算上运行，提交命令为：
@@ -41,8 +48,16 @@ ps: 这里其实很容易理解，对于每个stage中的if语句中判断stage�
 1. 提交的是cpu队列，而不是gpu。
 2. 建议每个stage运行后输出的log分开保存。（不然前面的会被后面覆盖掉）
 
-跑完之后，可以看到工程目录下生成了一个文件夹，目录结构如下：
-<p align="left"><img width="70%" src="picture/finish_stage0.png" /></p>
+跑完之后，可以看到工程目录下生成了一个文件夹data_plp，目录结构如下：
+<p align="left"><img width="60%" src="picture/finish_stage0.png" /></p>
+
+简单介绍一下相关的文件作用：
+1. data_plp中生成了7个文件夹：
+> + 开发训练: train+trainplp
+> + 注册: enroll+enrollplp
+> + 测试: test+testplp
+> + log文件夹: 存储plp特征提取的输出log信息。
+2. 具体以train+trainplp为例，
 
 
 
