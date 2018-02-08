@@ -98,6 +98,8 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 <p align="left"><img width="80%" src="picture/train_ivector_extractor.png" /></p>
 
 #### 实验步骤和结果
+跑完之后，可以看到exp_plp目录下生成了文件夹extractor_train。
+<p align="left"><img width="80%" src="picture/finish_stage2.png" /></p>
 
 ### stage 3
 #### 脚本解释
@@ -105,13 +107,15 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 <p align="left"><img width="80%" src="picture/extract_ivectors.png" /></p>
 
 #### 实验步骤和结果
+跑完之后，可以看到exp_plp目录下生成了文件夹extrain，将在最后的PLDA后端打分中使用。
+<p align="left"><img width="80%" src="picture/finish_stage3.png" /></p>
 
 ### PLDA.sh（stage 4）
 #### 脚本解释
 直接调用kaldi工具包，分成三步：
 1. 训练PLDA模型，训练数据为开发集，调用ivector-compute-plda即可，用法为：
 <p align="left"><img width="80%" src="picture/ivector-compute-plda.png" /></p>
-2. 利用训练好的PLDA模型给评测集进行打分，test_ref为给定的标准测试集合,ivector-plda-scoring用法为：
+2. 利用训练好的PLDA模型给评测集进行打分，test_ref为给定的标准测试集合，ivector-plda-scoring用法为：
 <p align="left"><img width="80%" src="picture/ivector-plda-scoring.png" /></p>
 3. 根据打分结果计算EER，并保存到输出文件，调用compute-eer即可：
 <p align="left"><img width="80%" src="picture/compute-eer.png" /></p>
