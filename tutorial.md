@@ -99,7 +99,7 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 
 #### 实验步骤和结果
 跑完之后，可以看到exp_plp目录下生成了文件夹extractor_train。
-<p align="left"><img width="80%" src="picture/finish_stage2.png" /></p>
+<p align="left"><img width="60%" src="picture/finish_stage2.png" /></p>
 
 ### stage 3
 #### 脚本解释
@@ -123,5 +123,5 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 #### 实验步骤和结果
 
 ### 实验总结
-实验 __完成__ 之后，完整的实验目录为：
-<p align="left"><img width="80%" src="picture/final_directory.png" /></p>
+这个实验的基本流程图为：
+<p align="left"><img width="80%" src="picture/GMMivector_framework.png" /></p>
