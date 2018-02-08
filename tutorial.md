@@ -77,7 +77,10 @@ stage0中运行的其实就是local/make_rsr.sh脚本，该脚本的运行流程
 > + raw_plp_train.X.ark： X（1～40）与上相对应，具体plp特征存放的文件（二进制格式）<br />
 （可使用copy-feats转化为文本格式查看，每个音频分成若干帧，每一帧提取出一个13维的plp特征向量）
 
-
 ### stage 1
+#### 脚本解释
+
+#### 实验步骤和结果
+
 实验 __完成__ 之后，完整的实验目录为：
 <p align="left"><img width="80%" src="picture/final_directory.png" /></p>
