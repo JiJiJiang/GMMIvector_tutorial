@@ -121,7 +121,7 @@ exp_plp/full_ubm/final.ubm将用于后续矩阵T的训练。
 <p align="left"><img width="80%" src="picture/compute-eer.png" /></p>
 
 #### 实验步骤和结果
-跑完之后，可以看到生成了results文件夹，包括单个子文件：
+跑完之后，可以看到生成了results文件夹，包括3个子文件：
 + plda_score： plda给每个测试数据打分的结果。
 + plda_score_split： 根据注册和测试是否为同一个人得到每个score的标记（target or nontarget）
 + plda_result： 输出计算得到的EER（0.6089%）。
